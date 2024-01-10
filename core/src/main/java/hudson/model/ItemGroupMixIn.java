@@ -288,6 +288,7 @@ public abstract class ItemGroupMixIn {
             success = acl.getACL().hasCreatePermission2(Jenkins.getAuthentication2(), parent, result.getDescriptor())
                 && result.getDescriptor().isApplicableIn(parent);
 
+            result.onCreatedFromScratch();
             add(result);
 
             ItemListener.fireOnCreated(result);
